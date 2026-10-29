@@ -1,0 +1,29 @@
+<view wx:if="{{!current}}" class="card empty">
+  <view style="font-size:80rpx;">🌳</view>
+  <view style="font-weight:700;margin:10rpx 0;">树上暂时没有虫啦</view>
+  <view class="muted">大家都很开心！等一等，或者先去帮忙化解别的吧～</view>
+  <button class="btn-green refresh" bindtap="pickOne">再摇一次树 🌳</button>
+</view>
+
+<view wx:if="{{current}}">
+  <view class="card worry">
+    <view class="who">{{current.mood}} 深夜的小猫 · 扔下了一只虫 🐛</view>
+    <view class="content">{{current.content}}</view>
+    <view class="chips"><text class="chip">{{current.need}}</text></view>
+  </view>
+
+  <view class="card">
+    <view class="title">💚 我来帮 TA</view>
+    <view class="muted" style="margin-bottom:10rpx;">认真写10个字以上，这只虫就会变成果实 🍎</view>
+    <textarea class="ta" placeholder="给TA一点温柔的建议吧……"
+      value="{{reply}}" bindinput="onInput" maxlength="300" />
+    <view class="stickers">
+      <view wx:for="{{stickers}}" wx:key="index" class="sticker"
+        bindtap="addSticker" data-s="{{item}}">{{item}}</view>
+    </view>
+    <view class="foot">
+      <button class="btn-green send" bindtap="send">送出温暖 💌</button>
+      <button class="btn-green ghost" bindtap="pickOne">换一只 🐛</button>
+    </view>
+  </view>
+</view>

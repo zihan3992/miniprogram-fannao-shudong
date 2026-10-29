@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/write/write",
+    "pages/pick/pick",
+    "pages/rank/rank"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3d8a5f",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "烦恼树洞·心愿果",
+    "backgroundColor": "#eaf6ef",
+    "enableShareAppMessage": true,
+    "enableShareTimeline": true
+  },
+  "tabBar": {
+    "color": "#9ab0a1",
+    "selectedColor": "#3d8a5f",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "解忧树", "iconPath": "assets/tree.png", "selectedIconPath": "assets/tree-on.png" },
+      { "pagePath": "pages/write/write", "text": "扔虫", "iconPath": "assets/bug.png", "selectedIconPath": "assets/bug-on.png" },
+      { "pagePath": "pages/pick/pick", "text": "捡虫", "iconPath": "assets/help.png", "selectedIconPath": "assets/help-on.png" },
+      { "pagePath": "pages/rank/rank", "text": "爱心榜", "iconPath": "assets/rank.png", "selectedIconPath": "assets/rank-on.png" }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

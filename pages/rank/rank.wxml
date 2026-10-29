@@ -1,0 +1,27 @@
+<view class="card head">
+  <view style="font-size:34rpx;font-weight:700;">👑 爱心排行榜</view>
+  <view class="muted">果子越多 = 帮过的心事越多</view>
+  <view class="tabs">
+    <text class="tab" data-t="week">周榜</text>
+    <text class="tab" data-t="month">月榜</text>
+    <text class="tab on" data-t="total" bindtap="switchTab">总榜</text>
+  </view>
+</view>
+
+<view class="rank-row {{index < 3 ? 'top3' : ''}}" wx:for="{{list}}" wx:key="openid">
+  <view class="medal">{{index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1}}</view>
+  <view class="avatar">{{item.avatar}}</view>
+  <view class="info">
+    <view><text class="name">{{item.name}}</text> <text class="badge">{{item.title}}</text></view>
+  </view>
+  <view class="count">🍎 {{item.fruits}}</view>
+</view>
+
+<view wx:if="{{!list.length}}" class="card empty">
+  <view class="muted">还没有人结出果子，快去「捡虫」帮TA化解烦恼吧！🐛→🍎</view>
+</view>
+
+<view class="card tip">
+  <view class="title">🏆 称号规则</view>
+  <view class="muted">10果=护林员 · 30果=果园守护神 · 100果=树洞之光</view>
+</view>

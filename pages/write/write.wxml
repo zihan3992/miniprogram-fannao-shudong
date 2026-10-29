@@ -1,0 +1,32 @@
+<view class="card">
+  <view class="title">🐛 扔下一只烦恼虫</view>
+  <view class="muted">写出来，树会替你保守秘密，也会有人来帮它变成果实。</view>
+</view>
+
+<view class="card">
+  <view class="muted label">① 今天的心情是……</view>
+  <view class="row">
+    <view wx:for="{{moods}}" wx:key="index"
+      class="sticker {{moodIdx === index ? 'on' : ''}}"
+      bindtap="pickMood" data-i="{{index}}">{{item}}</view>
+  </view>
+</view>
+
+<view class="card">
+  <view class="muted label">② 想要的是……</view>
+  <view class="row wrap">
+    <view wx:for="{{needs}}" wx:key="index"
+      class="chip {{needIdx === index ? 'on' : ''}}"
+      bindtap="pickNeed" data-i="{{index}}">{{item}}</view>
+  </view>
+</view>
+
+<view class="card">
+  <view class="muted label">③ 你的心事（匿名，300字内）</view>
+  <textarea class="ta" placeholder="轻轻写下来吧，这里是安全的树洞……"
+    value="{{content}}" bindinput="onInput" maxlength="300" />
+  <view class="foot">
+    <button class="btn-green submit" bindtap="submit">放它上树 🌳</button>
+    <view class="muted">默认匿名 · 每天最多扔3只</view>
+  </view>
+</view>

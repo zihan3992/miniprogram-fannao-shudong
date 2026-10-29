@@ -1,0 +1,28 @@
+<view class="card head">
+  <text style="font-size:44rpx;">🌳</text>
+  <view>
+    <view class="head-title">烦恼树洞 · 班级解忧树</view>
+    <view class="muted">已化解 {{fruits}} 个心事 · 树上挂着 {{bugsCount}} 只烦恼虫</view>
+  </view>
+</view>
+
+<view class="tree-wrap">
+  <image class="scene" src="/assets/tree-scene.png" mode="aspectFill" />
+  <!-- 互动虫子：点击查看烦恼 -->
+  <view class="bug b1 wiggle" wx:if="{{bugs.length > 0}}" bindtap="onBugTap" data-idx="0">🐛</view>
+  <view class="bug b2 wiggle" wx:if="{{bugs.length > 1}}" bindtap="onBugTap" data-idx="1">🐛</view>
+  <view class="bug b3 wiggle" wx:if="{{bugs.length > 2}}" bindtap="onBugTap" data-idx="2">🐛</view>
+  <!-- 果实徽标：已化解数量 -->
+  <view class="fruit-badge" wx:if="{{fruits > 0}}">🍎 × {{fruits}}</view>
+  <view class="plaque">🐛 点小虫看烦恼 · 🍎 果实 = 被化解的心事</view>
+</view>
+
+<view class="actions">
+  <button class="btn-green go" bindtap="goWrite">🐛 扔一只虫</button>
+  <button class="btn-green ghost" bindtap="goPick">🙋 捡一只虫</button>
+</view>
+
+<view class="card tip">
+  <view class="tip-line">💡 写下烦恼 = 虫子上树 · 帮TA开导 = 虫子变果实</view>
+  <view class="tip-line">👑 果实越多，爱心榜排名越靠前</view>
+</view>
